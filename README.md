@@ -4,15 +4,15 @@
 Dự án này nhằm mục đích dự đoán **Severity Impairment Index (SII)** dựa trên dữ liệu về hành vi trực tuyến và các yếu tố liên quan. Cuộc thi này yêu cầu xây dựng mô hình dự đoán chính xác mức độ ảnh hưởng của việc sử dụng internet gây ra vấn đề cho trẻ em và thanh thiếu niên.
 
 ### Đánh giá
-Kết quả được đánh giá dựa trên **Quadratic Weighted Kappa (QWK)**, một chỉ số đo lường mức độ đồng thuận giữa dự đoán và nhãn thực tế, đặc biệt phù hợp với bài toán phân loại đa lớp có thứ tự.
+Kết quả được đánh giá dựa trên **Quadratic Weighted Kappa (QWK)**, một chỉ số đo lường mức độ đồng thuận giữa dự đoán và nhãn thực tế, đặc biệt phù hợp với bài toán phân loại đa lớp None, Mild, Moderate, Severe
 
 ---
 
 ## 1. Ứng dụng của các thuật toán học máy và giải thích các lựa chọn
 
 ### 1.1. Thuật toán học máy được sử dụng
-- **LightGBM**: Một framework gradient boosting hiệu quả và nhanh chóng, đặc biệt phù hợp với các tập dữ liệu lớn. LightGBM được sử dụng để xử lý các tính năng dữ liệu và dự đoán chỉ số suy giảm nghiêm trọng (sii).
-- **XGBoost**: Một thuật toán gradient boosting khác, cũng được sử dụng rộng rãi trong các ứng dụng thực tế. XGBoost được sử dụng để tăng cường độ chính xác của mô hình.
+- **LightGBM**: Thuật toán gradient boosting hiệu quả và nhanh chóng, đặc biệt phù hợp với các tập dữ liệu lớn. LightGBM được sử dụng để xử lý các tính năng dữ liệu và dự đoán chỉ số suy giảm nghiêm trọng (sii).
+- **XGBoost**: Thuật toán gradient boosting được sử dụng rộng rãi trong các ứng dụng thực tế. XGBoost được sử dụng để tăng cường độ chính xác của mô hình.
 - **CatBoost**: Một thuật toán gradient boosting được tối ưu hóa cho các tính năng phân loại. CatBoost được sử dụng để xử lý các tính năng phân loại mà không cần quá nhiều tiền xử lý.
 - **TabNet**: Một mô hình học sâu được thiết kế đặc biệt cho các tác vụ hồi quy và phân loại trên dữ liệu có cấu trúc. TabNet được sử dụng để tận dụng sức mạnh của mạng nơ-ron trong việc học các tính năng phức tạp.
 - **Voting Regressor**: Một mô hình tập hợp (ensemble) kết hợp các dự đoán từ nhiều mô hình khác nhau (LightGBM, XGBoost, CatBoost, TabNet) để cải thiện độ chính xác và độ ổn định của mô hình.
